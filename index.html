@@ -1,149 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
-  
 <head>
-<title> Nashuu</title>
-<!--<link rel="icon" href="https://avatars.githubusercontent.com/u/88819188?v=4">-->
-</head>
-  
-<body>
-<div class="container">
-<!--<audio controls hidden loop>
-    <source src="videoplayback.webm" type="audio/mpeg">
-</audio>-->
-<div class="text" style="filter: drop-shadow(#ffffff 0px 0px 9px);"><span class="dud">_</span><span class="dud">@</span>th<span class="dud">\</span>b.c<span class="dud">]</span>m<span class="dud">{</span>C<span class="dud">^</span>p<span class="dud">&gt;</span><span class="dud">\</span>r<span class="dud">\</span><span class="dud">^</span>F</div>
-</div>
-  
-<script>
-    // var CTE = {};
-    //CTE.callback = () => {
-     // var aud = document.getElementsByTagName("audio")[0];
-    //  aud.volume = .3;
-     // aud.play();
-  //  }
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-var TextScramble = function () {
-  function TextScramble(el) {
-    _classCallCheck(this, TextScramble);
-
-    this.el = el;
-    this.chars = '!<>-_\\/[]{}@€”=+*^?#________';
-    this.update = this.update.bind(this);
-  }
-
-  _createClass(TextScramble, [{
-    key: 'setText',
-    value: function setText(newText) {
-      var _this = this;
-
-      var oldText = this.el.innerText;
-      var length = Math.max(oldText.length, newText.length);
-      var promise = new Promise(function (resolve) {
-        return _this.resolve = resolve;
-      });
-      this.queue = [];
-      for (var i = 0; i < length; i++) {
-        var from = oldText[i] || '';
-        var to = newText[i] || '';
-        var start = Math.floor(Math.random() * 40);
-        var end = start + Math.floor(Math.random() * 40);
-        this.queue.push({ from: from, to: to, start: start, end: end });
-      }
-      cancelAnimationFrame(this.frameRequest);
-      this.frame = 0;
-      this.update();
-      return promise;
+  <title破壊</title>
+  <style>
+    @import 'https://fonts.googleapis.com/css?family=Roboto+Mono:100';
+    html,
+    body {
+      font-family: 'Roboto Mono', monospace;
+      background-image: url("https://images.squarespace-cdn.com/content/v1/59396fee59cc6877bacf5ab5/1634744181996-U1JCW0XMXA377ZNVOXO6/Tweet+1.gif");
+      background-color: #cccccc;
+      height: 100%;
+      overflow: hidden; /* Hide scrollbars */
     }
-  }, {
-    key: 'update',
-    value: function update() {
-      var output = '';
-      var complete = 0;
-      for (var i = 0, n = this.queue.length; i < n; i++) {
-        var _queue$i = this.queue[i],
-            from = _queue$i.from,
-            to = _queue$i.to,
-            start = _queue$i.start,
-            end = _queue$i.end,
-            char = _queue$i.char;
-
-        if (this.frame >= end) {
-          complete++;
-          output += to;
-        } else if (this.frame >= start) {
-          if (!char || Math.random() < 0.28) {
-            char = this.randomChar();
-            this.queue[i].char = char;
-          }
-          output += '<span class="dud">' + char + '</span>';
-        } else {
-          output += from;
-        }
-      }
-      this.el.innerHTML = output;
-      if (complete === this.queue.length) {
-        this.resolve();
-      } else {
-        this.frameRequest = requestAnimationFrame(this.update);
-        this.frame++;
-      }
-    }
-  }, {
-    key: 'randomChar',
-    value: function randomChar() {
-      return this.chars[Math.floor(Math.random() * this.chars.length)];
-    }
-  }]);
-
-  return TextScramble;
-}();
-
-var phrases = [ "Nashuu.🥀","exploring my life","learning new things.","my hobby is to disturb peoples for no reason", "stuyding in Kendriya Vidalaya Dipatloi", "Living in Jharkand, Ranchi-Khelgaon", "no more informations for you", "Fuck off <$"];
-
-var el = document.querySelector('.text');
-var fx = new TextScramble(el);
-
-var counter = 0;
-var next = function next() {
-  fx.setText(phrases[counter]).then(function () {
-    setTimeout(next, 2000);
-  });
-  counter = (counter + 1) % phrases.length;
-};
-
-next();
-</script>
-  
-<style>
-@import 'https://fonts.googleapis.com/css?family=Roboto+Mono:100';
-html,
-body {
-  font-family: 'Roboto Mono', monospace;
-   background-image: url("https://images.squarespace-cdn.com/content/v1/59396fee59cc6877bacf5ab5/1634744181996-U1JCW0XMXA377ZNVOXO6/Tweet+1.gif");
-   background-color: #cccccc;
-  height: 100%;
-  overflow: hidden; /* Hide scrollbars */
-}
-.container {
+    .container {
   height: 100%;
   width: 100%;
   justify-content: center;
   align-items: center;
   display: flex;
+  flex-direction: column;
 }
-.text {
+
+.countdown {
   font-weight: 100;
   font-size: 35px;
   color: #ffffff;
-}
-.dud {
-  color: #ffffff;
+  text-shadow: 0 0 5px #ffffff;
+  margin-bottom: 20px;
 }
 
-</style>
+.text-shadow {
+  color: #ffffff;
+  text-shadow: 0 0 10px #ffffff;
+}
+      </style>
+</head>
+<body>
+  <div class="container">
+    <div class="countdown">00:00:00</div>
+    <div class="text-shadow">Countdown to Nashu's Birthday</div>
+  </div>
+  <script>
+    // Set the date we're counting down to
+    var countDownDate = new Date("February 14, 2023 00:00:00").getTime();
+
+    // Update the countdown every 1 second
+    var x = setInterval(function() {
+
+      // Get today's date and time
+      var now = new Date().getTime();
+
+      // Find the distance between now and the countdown date
+      var distance = countDownDate - now;
+
+      // Time calculations for days, hours, minutes and seconds
+      var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      // Output the result in the element with id="demo"
+      document.querySelector(".countdown").innerHTML = days + "d " + hours + "h " + minutes + "m " + seconds + "s";
+
+      // If the countdown is finished, write some text
+      if (distance < 0) {
+        clearInterval(x);
+        document.querySelector(".countdown").innerHTML = "HAPPY NEW YEAR!";
+      }
+    }, 1000);
+  </script>
 </body>
 </html>
