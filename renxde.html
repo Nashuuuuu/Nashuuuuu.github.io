@@ -166,18 +166,32 @@
     </div>
   </div>
 </section>
-<style>
-  #countdown {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 1vh; /* or any desired height */
-}
 
-#timer {
-  font-size: 1rem; /* or any desired font size */
-  font-weight: bold;
-}
+  <style>
+  .container-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+
+  .overview__container {
+    text-align: center;
+  }
+
+  #countdown {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px; /* Add some margin to create space */
+  }
+
+  #timer {
+    font-size: 1rem;
+    font-weight: bold;
+  }
+</style>
+
 </style>
 <script>
  var countDownDate = new Date("Mar 20, 2023 00:00:00").getTime();
